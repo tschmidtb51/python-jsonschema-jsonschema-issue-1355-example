@@ -17,14 +17,20 @@ validate() {
 
 }
 
+# Use schema that enforces validation against a JSON
 SCHEMA="validation-enforced/"${SCHEMANAME}
 
+# ... with a valid date-time string; expected: valid, actual: error
 validate "data/valid.json" 0
+# ... with an invalid date-time string; expected: invalid, actual: error
 validate "data/failing.json" 1
 
+# Use schema that does not enforce validation against a JSON
 SCHEMA="validation-optional/"${SCHEMANAME}
 
+# ... with a valid date-time string; expected: valid, actual: valid
 validate "data/valid.json" 0
+# ... with an invalid date-time string; expected: valid, actual: valid
 validate "data/failing.json" 0
 
 exit ${FAIL}
