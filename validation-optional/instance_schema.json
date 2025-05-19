@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tschmidtb51/python-jsonschema-jsonschema-issue-1355-example/refs/heads/main/validation-optional/instance_schema.json",
+  "title": "Example for python-jsonschema/jsonschema#1355",
+  "description": "Representation of a last updated timestamp as a JSON document.",
+  "type": "object",
+  "required": [
+    "last_updated"
+  ],
+  "properties": {
+    "last_updated": {
+      "title": "Last updated",
+      "description": "Holds the date and time when the document was last updated.",
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
